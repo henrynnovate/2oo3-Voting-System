@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Sensor Voting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 300px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+            let formData = new FormData(document.getElementById("sensorForm"));
+            
+            fetch("/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById("result").innerHTML = `<p style='color: red;'>${data.error}</p>`;
+                } else {
+                    let alarmMessage = data.alarm_triggered ? "🚨 ALARM TRIGGERED! 🚨" : "✅ System Normal";
+                    document.getElementById("result").innerHTML = `<p>${alarmMessage}</p>`;
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Pressure Sensor Input</h2>
+        <form id="sensorForm" onsubmit="submitForm(event)">
+            <label for="threshold">Threshold:</label>
+            <input type="number" step="any" name="threshold" required>
+
+            <label for="sensor1">Sensor 1 Pressure:</label>
+            <input type="number" step="any" name="sensor1" required>
+            
+            <label for="sensor2">Sensor 2 Pressure:</label>
+            <input type="number" step="any" name="sensor2" required>
+            
+            <label for="sensor3">Sensor 3 Pressure:</label>
+            <input type="number" step="any" name="sensor3" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+</body>
+</html>

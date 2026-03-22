@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Monitoring Control Center</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-soft: #f7f7ef;
+            --bg-accent: #efe4d2;
+            --panel: #fffdf8;
+            --ink: #1d2c2a;
+            --muted: #4f5f5d;
+            --primary: #126e57;
+            --primary-strong: #0d5242;
+            --warning: #c2432c;
+            --ok: #2a7c4f;
+            --line: #d8d2c3;
+            --shadow: 0 14px 40px rgba(20, 33, 30, 0.12);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100%;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 85% 15%, rgba(255, 183, 77, 0.25), transparent 35%),
+                radial-gradient(circle at 15% 80%, rgba(18, 110, 87, 0.18), transparent 40%),
+                linear-gradient(130deg, var(--bg-soft), var(--bg-accent));
+            padding: 16px;
+        }
+
+        .shell {
+            max-width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            animation: riseIn 450ms ease-out;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .mobile-view-switch {
+            display: none;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 9px 12px;
+            background: #f1ebde;
+            color: #3a4a47;
+            font-weight: 600;
+            font-family: "Space Grotesk", sans-serif;
+            cursor: pointer;
+        }
+
+        .toggle-btn.is-active {
+            background: var(--primary);
+            color: #f7fffc;
+            border-color: var(--primary-strong);
+        }
+
+        .title {
+            margin: 0;
+            font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            margin: 8px 0 0;
+            color: var(--muted);
+            max-width: 620px;
+        }
+
+        .status-pill {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(18, 110, 87, 0.12);
+            border: 1px solid rgba(18, 110, 87, 0.25);
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.84rem;
+        }
+
+        .henry-guide {
+            display: grid;
+            grid-template-columns: 56px minmax(260px, 380px);
+            gap: 10px;
+            align-items: end;
+        }
+
+        .henry-guide.is-hidden {
+            display: none;
+        }
+
+        .henry-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 999px;
+            border: 2px solid #d4c5a6;
+            object-fit: cover;
+            background: #efe6d4;
+            box-shadow: 0 10px 20px rgba(20, 33, 30, 0.18);
+        }
+
+        .henry-avatar.is-wave {
+            transform-origin: 70% 85%;
+            animation: henryWave 520ms ease-in-out 1;
+        }
+
+        .henry-bubble {
+            position: relative;
+            background: #fffaf0;
+            border: 2px solid #252525;
+            border-radius: 6px;
+            padding: 10px 12px 12px;
+            box-shadow: 6px 6px 0 rgba(37, 37, 37, 0.12);
+            min-height: 92px;
+            opacity: 1;
+            transition: opacity 220ms ease, transform 220ms ease;
+        }
+
+        .henry-bubble.is-swapping {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+
+        .henry-bubble::before {
+            content: "";
+            position: absolute;
+            left: -12px;
+            bottom: 10px;
+            width: 14px;
+            height: 14px;
+            background: #fffaf0;
+            border-left: 2px solid #252525;
+            border-bottom: 2px solid #252525;
+            transform: rotate(45deg);
+        }
+
+        .henry-title {
+            margin: 0 0 4px;
+            font-size: 0.86rem;
+            letter-spacing: 0.04em;
+            color: #2d3b39;
+            text-transform: uppercase;
+        }
+
+        .henry-message {
+            margin: 0;
+            color: #2f403e;
+            font-size: 0.9rem;
+            line-height: 1.35;
+            white-space: pre-wrap;
+            min-height: 40px;
+        }
+
+        .henry-controls {
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .henry-btn {
+            border: 1px solid #cbbd9d;
+            background: #f2ead8;
+            color: #324240;
+            border-radius: 8px;
+            padding: 7px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .henry-remember {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: #40514f;
+        }
+
+        .henry-typing {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 6px;
+            font-size: 0.78rem;
+            color: #6b7a78;
+            opacity: 0;
+            transition: opacity 180ms ease;
+        }
+
+        .henry-typing.is-visible {
+            opacity: 1;
+        }
+
+        .henry-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 999px;
+            background: #6b7a78;
+            animation: henryDotPulse 0.9s ease-in-out infinite;
+        }
+
+        .henry-dot:nth-child(2) {
+            animation-delay: 120ms;
+        }
+
+        .henry-dot:nth-child(3) {
+            animation-delay: 240ms;
+        }
+
+        .typing-caret::after {
+            content: "|";
+            margin-left: 2px;
+            animation: caretBlink 900ms step-end infinite;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 18px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 18px;
+            min-height: 0;
+        }
+
+        .controls-panel {
+            overflow: auto;
+        }
+
+        .panel-title {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .sensor-group {
+            margin-bottom: 16px;
+            padding: 12px;
+            border-radius: 14px;
+            background: #fcfbf7;
+            border: 1px solid #ece5d5;
+        }
+
+        .sensor-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .sensor-value {
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.92rem;
+            color: var(--primary-strong);
+            font-weight: 500;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--primary);
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field label {
+            font-size: 0.82rem;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+        }
+
+        .field input {
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.95rem;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            padding: 9px 10px;
+            outline: none;
+        }
+
+        .field input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(18, 110, 87, 0.14);
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            padding: 11px 14px;
+            font-weight: 700;
+            font-family: "Space Grotesk", sans-serif;
+            cursor: pointer;
+            transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #f7fffc;
+            box-shadow: 0 8px 20px rgba(18, 110, 87, 0.25);
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-strong);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #ece8dc;
+            color: #364542;
+        }
+
+        .btn-live {
+            background: #1f355b;
+            color: #eff5ff;
+        }
+
+        .btn-live.is-live {
+            background: #c2432c;
+            color: #fff6f4;
+        }
+
+        .status-line {
+            margin-top: 14px;
+            min-height: 22px;
+            font-size: 0.93rem;
+        }
+
+        .outlier-note {
+            margin: 8px 0 2px;
+            min-height: 20px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .charts {
+            display: grid;
+            grid-template-rows: repeat(2, minmax(320px, 360px));
+            gap: 18px;
+            min-height: 0;
+        }
+
+        .chart-wrap {
+            height: 100%;
+            min-height: 320px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100% !important;
+        }
+
+        .summary-grid {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(110px, 1fr));
+            gap: 8px;
+        }
+
+        .kpi {
+            background: #faf6eb;
+            border: 1px solid #e6decd;
+            border-radius: 12px;
+            padding: 9px;
+        }
+
+        .kpi-label {
+            color: var(--muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .kpi-value {
+            margin-top: 4px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        .state-ok {
+            color: var(--ok);
+        }
+
+        .state-warn {
+            color: var(--warning);
+        }
+
+        @media (max-width: 980px) {
+            body {
+                padding: 12px;
+            }
+
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: minmax(260px, 40%) 1fr;
+            }
+
+            .charts {
+                grid-template-rows: repeat(2, minmax(260px, 300px));
+            }
+
+            .chart-wrap {
+                min-height: 260px;
+            }
+
+            .controls-panel {
+                overflow: auto;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .mobile-view-switch {
+                display: flex;
+            }
+
+            .header {
+                gap: 12px;
+            }
+
+            .layout {
+                grid-template-rows: 1fr;
+            }
+
+            .layout .controls-panel,
+            .layout .charts-panel {
+                display: none;
+                height: 100%;
+            }
+
+            .layout.show-controls .controls-panel {
+                display: block;
+            }
+
+            .layout.show-charts .charts-panel {
+                display: grid;
+                grid-template-rows: repeat(2, minmax(230px, 1fr));
+            }
+
+            .status-pill {
+                width: 100%;
+                text-align: center;
+            }
+
+            .henry-guide {
+                grid-template-columns: 48px minmax(210px, 1fr);
+                width: 100%;
+            }
+
+            .henry-avatar {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes caretBlink {
+            0%, 50% { opacity: 1; }
+            50.01%, 100% { opacity: 0; }
+        }
+
+        @keyframes henryDotPulse {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-2px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes henryWave {
+            0% { transform: rotate(0deg); }
+            20% { transform: rotate(12deg); }
+            40% { transform: rotate(-8deg); }
+            60% { transform: rotate(10deg); }
+            80% { transform: rotate(-6deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <header class="header">
+            <div>
+                <h1 class="title">Pressure Monitoring Control Center</h1>
+                <p class="subtitle">Interactive simulation for 2-out-of-3 voting logic with live trend visibility and configurable safety limits.</p>
+            </div>
+            <div id="headerStatus" class="status-pill">System state: idle</div>
+            <aside id="henryGuide" class="henry-guide" aria-live="polite">
+                <img id="henryAvatar" class="henry-avatar" src="/assets/character%20face.jpeg" alt="Henry avatar">
+                <div id="henryBubble" class="henry-bubble">
+                    <p class="henry-title">Notes from Henry</p>
+                    <p id="henryMessage" class="henry-message"></p>
+                    <div id="henryTyping" class="henry-typing" aria-hidden="true">
+                        <span>Henry is typing</span>
+                        <span class="henry-dot"></span>
+                        <span class="henry-dot"></span>
+                        <span class="henry-dot"></span>
+                    </div>
+                    <div class="henry-controls">
+                        <label class="henry-remember" for="henryRemember">
+                            <input id="henryRemember" type="checkbox">
+                            Hide tips next time
+                        </label>
+                        <div>
+                            <button id="henryDismissBtn" class="henry-btn" type="button">Dismiss</button>
+                            <button id="henryNextBtn" class="henry-btn" type="button">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="mobile-view-switch">
+                <button id="showControlsBtn" class="toggle-btn is-active" type="button">Controls</button>
+                <button id="showChartsBtn" class="toggle-btn" type="button">Charts</button>
+            </div>
+        </header>
+
+        <section id="mainLayout" class="layout show-controls">
+            <aside class="panel controls-panel">
+                <h2 class="panel-title">Sensor Inputs</h2>
+
+                <div class="sensor-group">
+                    <div class="sensor-head">
+                        <label for="sensor1">Sensor 1</label>
+                        <span id="sensor1Value" class="sensor-value">50.0</span>
+                    </div>
+                    <input id="sensor1" type="range" min="0" max="200" step="0.5" value="50">
+                </div>
+
+                <div class="sensor-group">
+                    <div class="sensor-head">
+                        <label for="sensor2">Sensor 2</label>
+                        <span id="sensor2Value" class="sensor-value">50.0</span>
+                    </div>
+                    <input id="sensor2" type="range" min="0" max="200" step="0.5" value="50">
+                </div>
+
+                <div class="sensor-group">
+                    <div class="sensor-head">
+                        <label for="sensor3">Sensor 3</label>
+                        <span id="sensor3Value" class="sensor-value">50.0</span>
+                    </div>
+                    <input id="sensor3" type="range" min="0" max="200" step="0.5" value="50">
+                </div>
+
+                <div class="controls">
+                    <div class="field">
+                        <label for="threshold">Alarm Threshold</label>
+                        <input id="threshold" type="number" min="0" max="1000" step="1" value="50">
+                    </div>
+                    <div class="field">
+                        <label for="deviation">Deviation %</label>
+                        <input id="deviation" type="number" min="0" max="100" step="1" value="10">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="submitBtn" class="btn-primary" type="button">Analyze Readings</button>
+                    <button id="resetBtn" class="btn-secondary" type="button">Reset</button>
+                    <button id="liveBtn" class="btn-live" type="button">Start Live</button>
+                </div>
+
+                <p id="inlineStatus" class="status-line"></p>
+                <p id="outlierNote" class="outlier-note">Outlier insight will appear after analysis.</p>
+
+                <div class="summary-grid">
+                    <div class="kpi">
+                        <div class="kpi-label">Alarm</div>
+                        <div id="kpiAlarm" class="kpi-value">-</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="kpi-label">Deviation</div>
+                        <div id="kpiDeviation" class="kpi-value">-</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="kpi-label">Samples</div>
+                        <div id="kpiSamples" class="kpi-value">0</div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="charts charts-panel">
+                <article class="panel chart-wrap">
+                    <h2 class="panel-title">Current Sensor Snapshot</h2>
+                    <canvas id="sensorChart"></canvas>
+                </article>
+                <article class="panel chart-wrap">
+                    <h2 class="panel-title">Recent Trend</h2>
+                    <canvas id="trendChart"></canvas>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        const sensorInputs = [
+            document.getElementById("sensor1"),
+            document.getElementById("sensor2"),
+            document.getElementById("sensor3")
+        ];
+        const sensorValueLabels = [
+            document.getElementById("sensor1Value"),
+            document.getElementById("sensor2Value"),
+            document.getElementById("sensor3Value")
+        ];
+
+        const thresholdInput = document.getElementById("threshold");
+        const deviationInput = document.getElementById("deviation");
+        const henryGuide = document.getElementById("henryGuide");
+        const henryAvatar = document.getElementById("henryAvatar");
+        const henryBubble = document.getElementById("henryBubble");
+        const henryMessage = document.getElementById("henryMessage");
+        const henryTyping = document.getElementById("henryTyping");
+        const henryRemember = document.getElementById("henryRemember");
+        const henryDismissBtn = document.getElementById("henryDismissBtn");
+        const henryNextBtn = document.getElementById("henryNextBtn");
+        const submitButton = document.getElementById("submitBtn");
+        const resetButton = document.getElementById("resetBtn");
+        const liveButton = document.getElementById("liveBtn");
+        const inlineStatus = document.getElementById("inlineStatus");
+        const outlierNote = document.getElementById("outlierNote");
+        const headerStatus = document.getElementById("headerStatus");
+        const mainLayout = document.getElementById("mainLayout");
+        const showControlsBtn = document.getElementById("showControlsBtn");
+        const showChartsBtn = document.getElementById("showChartsBtn");
+        const kpiAlarm = document.getElementById("kpiAlarm");
+        const kpiDeviation = document.getElementById("kpiDeviation");
+        const kpiSamples = document.getElementById("kpiSamples");
+
+        const trendData = {
+            sensor1: [],
+            sensor2: [],
+            sensor3: [],
+            average: [],
+            threshold: [],
+            timestamps: []
+        };
+
+        const MAX_TREND_POINTS = 12;
+        const LIVE_INTERVAL_MS = 1000;
+        const HENRY_AUTO_ADVANCE_MS = 4200;
+        const HENRY_SEEN_KEY = "pmvs_henry_tips_hidden";
+        const INTRO_MESSAGES = [
+            "Hi there. Welcome to the Pressure Monitoring Control Center.",
+            "I am Henry. I will guide you through this dashboard in less than 20 seconds.",
+            "Use Sensor 1 to Sensor 3 sliders to simulate pressure values.",
+            "Set your Alarm Threshold and Deviation % so the system can evaluate risk.",
+            "Use Analyze Readings for manual checks, or Start Live to auto-stream data each second.",
+            "Watch the Snapshot and Recent Trend charts to track pressure behavior point by point."
+        ];
+        let liveTimer = null;
+        let isSubmitting = false;
+        let introSequenceId = 0;
+        let introMessageIndex = 0;
+        let introAutoTimer = null;
+
+        function wait(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+
+        async function typeText(element, text, speedMs, sequenceId) {
+            element.textContent = "";
+            element.classList.add("typing-caret");
+
+            for (let i = 0; i < text.length; i += 1) {
+                if (sequenceId !== introSequenceId) {
+                    return;
+                }
+                element.textContent += text[i];
+                await wait(speedMs);
+            }
+
+            element.classList.remove("typing-caret");
+        }
+
+        function clearHenryAutoAdvance() {
+            if (introAutoTimer) {
+                clearTimeout(introAutoTimer);
+                introAutoTimer = null;
+            }
+        }
+
+        function updateHenryActionLabel() {
+            const isLastMessage = introMessageIndex >= INTRO_MESSAGES.length - 1;
+            henryNextBtn.textContent = isLastMessage ? "Happy Engineering" : "Next";
+        }
+
+        function scheduleHenryAutoAdvance(sequenceId) {
+            clearHenryAutoAdvance();
+            if (introMessageIndex >= INTRO_MESSAGES.length - 1) {
+                return;
+            }
+
+            introAutoTimer = setTimeout(() => {
+                if (sequenceId !== introSequenceId || henryGuide.classList.contains("is-hidden")) {
+                    return;
+                }
+                nextHenryMessage();
+            }, HENRY_AUTO_ADVANCE_MS);
+        }
+
+        async function showHenryMessage(messageIndex) {
+            const sequenceId = ++introSequenceId;
+            const targetMessage = INTRO_MESSAGES[messageIndex];
+            updateHenryActionLabel();
+            clearHenryAutoAdvance();
+
+            henryBubble.classList.add("is-swapping");
+            henryTyping.classList.add("is-visible");
+            await wait(180);
+            if (sequenceId !== introSequenceId) {
+                return;
+            }
+
+            henryBubble.classList.remove("is-swapping");
+            await typeText(henryMessage, targetMessage, 20, sequenceId);
+            henryTyping.classList.remove("is-visible");
+            scheduleHenryAutoAdvance(sequenceId);
+        }
+
+        function dismissHenryTips(withWave = false) {
+            introSequenceId += 1;
+            clearHenryAutoAdvance();
+            if (henryRemember.checked) {
+                localStorage.setItem(HENRY_SEEN_KEY, "1");
+            }
+
+            if (withWave) {
+                henryAvatar.classList.add("is-wave");
+                setTimeout(() => {
+                    henryAvatar.classList.remove("is-wave");
+                    henryGuide.classList.add("is-hidden");
+                }, 520);
+                return;
+            }
+
+            henryGuide.classList.add("is-hidden");
+        }
+
+        function initHenryGuide() {
+            if (localStorage.getItem(HENRY_SEEN_KEY) === "1") {
+                henryGuide.classList.add("is-hidden");
+                return;
+            }
+            showHenryMessage(introMessageIndex);
+        }
+
+        function nextHenryMessage() {
+            if (introMessageIndex >= INTRO_MESSAGES.length - 1) {
+                dismissHenryTips(true);
+                return;
+            }
+            introMessageIndex = (introMessageIndex + 1) % INTRO_MESSAGES.length;
+            showHenryMessage(introMessageIndex);
+        }
+
+        function formatTimestamp(dateObj) {
+            return dateObj.toLocaleTimeString([], {
+                hour12: false,
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            });
+        }
+
+        function setMobileView(view) {
+            if (window.innerWidth > 760) {
+                return;
+            }
+
+            if (view === "charts") {
+                mainLayout.classList.remove("show-controls");
+                mainLayout.classList.add("show-charts");
+                showChartsBtn.classList.add("is-active");
+                showControlsBtn.classList.remove("is-active");
+                return;
+            }
+
+            mainLayout.classList.remove("show-charts");
+            mainLayout.classList.add("show-controls");
+            showControlsBtn.classList.add("is-active");
+            showChartsBtn.classList.remove("is-active");
+        }
+
+        function getSensorValues() {
+            return sensorInputs.map((input) => Number(input.value));
+        }
+
+        function syncSliderLabels() {
+            sensorInputs.forEach((input, index) => {
+                sensorValueLabels[index].textContent = Number(input.value).toFixed(1);
+            });
+        }
+
+        function renderSnapshotChart(sensorValues, threshold) {
+            const ctx = document.getElementById("sensorChart").getContext("2d");
+            if (!window.sensorChartInstance) {
+                window.sensorChartInstance = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: ["Sensor 1", "Sensor 2", "Sensor 3"],
+                        datasets: [
+                            {
+                                label: "Pressure",
+                                data: sensorValues,
+                                backgroundColor: ["#126e57", "#3e8b6a", "#6cae78"],
+                                borderRadius: 10
+                            },
+                            {
+                                type: "line",
+                                label: "Threshold",
+                                data: [threshold, threshold, threshold],
+                                borderColor: "#c2432c",
+                                borderDash: [6, 6],
+                                borderWidth: 2,
+                                pointRadius: 0
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "top",
+                                labels: {
+                                    usePointStyle: true,
+                                    boxWidth: 8,
+                                    padding: 10,
+                                    font: {
+                                        size: 11
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+                return;
+            }
+
+            window.sensorChartInstance.data.datasets[0].data = sensorValues;
+            window.sensorChartInstance.data.datasets[1].data = [threshold, threshold, threshold];
+            window.sensorChartInstance.update();
+        }
+
+        function renderTrendChart(sensorValues, threshold, label) {
+            const ctx = document.getElementById("trendChart").getContext("2d");
+            const timestampLabel = label || formatTimestamp(new Date());
+
+            trendData.sensor1.push(sensorValues[0]);
+            trendData.sensor2.push(sensorValues[1]);
+            trendData.sensor3.push(sensorValues[2]);
+            trendData.average.push((sensorValues[0] + sensorValues[1] + sensorValues[2]) / 3);
+            trendData.threshold.push(threshold);
+            trendData.timestamps.push(timestampLabel);
+
+            if (trendData.sensor1.length > MAX_TREND_POINTS) {
+                trendData.sensor1.shift();
+                trendData.sensor2.shift();
+                trendData.sensor3.shift();
+                trendData.average.shift();
+                trendData.threshold.shift();
+                trendData.timestamps.shift();
+            }
+
+            const labels = trendData.timestamps;
+            if (!window.trendChartInstance) {
+                window.trendChartInstance = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels,
+                        datasets: [
+                            {
+                                label: "Sensor 1",
+                                data: trendData.sensor1,
+                                borderColor: "#126e57",
+                                tension: 0,
+                                pointRadius: 4,
+                                pointHoverRadius: 6,
+                                pointBackgroundColor: "#126e57",
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Sensor 2",
+                                data: trendData.sensor2,
+                                borderColor: "#3e8b6a",
+                                tension: 0,
+                                pointRadius: 4,
+                                pointHoverRadius: 6,
+                                pointBackgroundColor: "#3e8b6a",
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Sensor 3",
+                                data: trendData.sensor3,
+                                borderColor: "#6cae78",
+                                tension: 0,
+                                pointRadius: 4,
+                                pointHoverRadius: 6,
+                                pointBackgroundColor: "#6cae78",
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Average Trend",
+                                data: trendData.average,
+                                borderColor: "#20396f",
+                                backgroundColor: "rgba(32, 57, 111, 0.08)",
+                                borderWidth: 2,
+                                tension: 0,
+                                fill: true,
+                                pointRadius: 0
+                            },
+                            {
+                                label: "Threshold",
+                                data: trendData.threshold,
+                                borderColor: "#c2432c",
+                                borderDash: [6, 6],
+                                pointRadius: 0,
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "top",
+                                labels: {
+                                    usePointStyle: true,
+                                    boxWidth: 8,
+                                    padding: 10,
+                                    font: {
+                                        size: 11
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                mode: "index",
+                                intersect: false
+                            }
+                        },
+                        interaction: {
+                            mode: "index",
+                            intersect: false
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+                return;
+            }
+
+            window.trendChartInstance.data.labels = labels;
+            window.trendChartInstance.data.datasets[0].data = trendData.sensor1;
+            window.trendChartInstance.data.datasets[1].data = trendData.sensor2;
+            window.trendChartInstance.data.datasets[2].data = trendData.sensor3;
+            window.trendChartInstance.data.datasets[3].data = trendData.average;
+            window.trendChartInstance.data.datasets[4].data = trendData.threshold;
+            window.trendChartInstance.update();
+        }
+
+        function setStatus(message, isError) {
+            inlineStatus.textContent = message;
+            inlineStatus.className = isError ? "status-line state-warn" : "status-line state-ok";
+        }
+
+        function updateOutlierNote(sensorValues, deviationDetected) {
+            const values = sensorValues.map(Number);
+            const average = values.reduce((sum, value) => sum + value, 0) / values.length;
+            const outlier = values
+                .map((value, index) => ({
+                    index,
+                    value,
+                    delta: Math.abs(value - average)
+                }))
+                .sort((a, b) => b.delta - a.delta)[0];
+
+            const percent = average === 0 ? 0 : (outlier.delta / average) * 100;
+            if (!deviationDetected) {
+                outlierNote.className = "outlier-note state-ok";
+                outlierNote.textContent = "No significant outlier. Sensor readings remain balanced.";
+                return;
+            }
+
+            const direction = outlier.value >= average ? "above" : "below";
+            outlierNote.className = "outlier-note state-warn";
+            outlierNote.textContent = `Outlier: Sensor ${outlier.index + 1} is ${percent.toFixed(1)}% ${direction} average.`;
+        }
+
+        function updateSummary(response, sensorValues) {
+            const alarmActive = Boolean(response.alarm_triggered);
+            const deviationActive = Boolean(response.deviation_detected);
+
+            kpiAlarm.textContent = alarmActive ? "Active" : "Normal";
+            kpiAlarm.className = `kpi-value ${alarmActive ? "state-warn" : "state-ok"}`;
+
+            kpiDeviation.textContent = deviationActive ? "Detected" : "Stable";
+            kpiDeviation.className = `kpi-value ${deviationActive ? "state-warn" : "state-ok"}`;
+
+            const sampleCount = Number(kpiSamples.textContent) + 1;
+            kpiSamples.textContent = String(sampleCount);
+
+            if (alarmActive) {
+                headerStatus.textContent = "System state: alarm triggered";
+                headerStatus.style.background = "rgba(194, 67, 44, 0.12)";
+                headerStatus.style.borderColor = "rgba(194, 67, 44, 0.28)";
+            } else if (deviationActive) {
+                headerStatus.textContent = "System state: deviation warning";
+                headerStatus.style.background = "rgba(255, 184, 77, 0.18)";
+                headerStatus.style.borderColor = "rgba(176, 113, 15, 0.34)";
+            } else {
+                headerStatus.textContent = "System state: stable";
+                headerStatus.style.background = "rgba(18, 110, 87, 0.12)";
+                headerStatus.style.borderColor = "rgba(18, 110, 87, 0.25)";
+            }
+
+            updateOutlierNote(sensorValues, deviationActive);
+        }
+
+        function randomizeSensorsForLive() {
+            sensorInputs.forEach((input) => {
+                const current = Number(input.value);
+                const noise = (Math.random() * 12) - 6;
+                const next = Math.max(0, Math.min(200, current + noise));
+                input.value = next.toFixed(1);
+            });
+
+            if (Math.random() < 0.18) {
+                const outlierIndex = Math.floor(Math.random() * sensorInputs.length);
+                const spike = Math.random() < 0.5 ? -24 : 24;
+                const current = Number(sensorInputs[outlierIndex].value);
+                const next = Math.max(0, Math.min(200, current + spike));
+                sensorInputs[outlierIndex].value = next.toFixed(1);
+            }
+
+            syncSliderLabels();
+            renderSnapshotChart(getSensorValues(), Number(thresholdInput.value));
+        }
+
+        function stopLiveMode() {
+            if (liveTimer) {
+                clearInterval(liveTimer);
+                liveTimer = null;
+            }
+            liveButton.classList.remove("is-live");
+            liveButton.textContent = "Start Live";
+        }
+
+        function toggleLiveMode() {
+            if (liveTimer) {
+                stopLiveMode();
+                setStatus("Live mode stopped.", false);
+                return;
+            }
+
+            liveTimer = setInterval(() => {
+                randomizeSensorsForLive();
+                submitData({ silentStatus: true, source: "live" });
+            }, LIVE_INTERVAL_MS);
+
+            liveButton.classList.add("is-live");
+            liveButton.textContent = "Stop Live";
+            setStatus("Live mode running (1s updates).", false);
+        }
+
+        async function submitData(options = {}) {
+            const { silentStatus = false, source = "manual" } = options;
+
+            if (isSubmitting) {
+                return;
+            }
+
+            const sensorValues = getSensorValues();
+            const threshold = Number(thresholdInput.value);
+            const deviation = Number(deviationInput.value);
+
+            if (!Number.isFinite(threshold) || !Number.isFinite(deviation)) {
+                setStatus("Threshold and deviation must be valid numbers.", true);
+                if (source === "live") {
+                    stopLiveMode();
+                }
+                return;
+            }
+
+            isSubmitting = true;
+            submitButton.disabled = true;
+            submitButton.textContent = "Analyzing...";
+            liveButton.disabled = true;
+            if (!silentStatus) {
+                setStatus("Submitting data to server...", false);
+            }
+
+            try {
+                const body = new URLSearchParams({
+                    sensor1: String(sensorValues[0]),
+                    sensor2: String(sensorValues[1]),
+                    sensor3: String(sensorValues[2]),
+                    threshold: String(threshold),
+                    deviation_percentage: String(deviation)
+                });
+
+                const response = await fetch("/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                    },
+                    body: body.toString()
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.error || "Request failed.");
+                }
+
+                renderSnapshotChart(data.sensor_values, data.threshold);
+                renderTrendChart(data.sensor_values, data.threshold, formatTimestamp(new Date()));
+                updateSummary(data, data.sensor_values);
+                if (!silentStatus) {
+                    setStatus("Data analyzed successfully.", false);
+                }
+            } catch (error) {
+                setStatus(error.message || "Request failed. Please retry.", true);
+                if (source === "live") {
+                    stopLiveMode();
+                }
+            } finally {
+                isSubmitting = false;
+                submitButton.disabled = false;
+                submitButton.textContent = "Analyze Readings";
+                liveButton.disabled = false;
+            }
+        }
+
+        function resetDashboard() {
+            sensorInputs.forEach((input) => {
+                input.value = "50";
+            });
+            thresholdInput.value = "50";
+            deviationInput.value = "10";
+            syncSliderLabels();
+
+            kpiAlarm.textContent = "-";
+            kpiAlarm.className = "kpi-value";
+            kpiDeviation.textContent = "-";
+            kpiDeviation.className = "kpi-value";
+            kpiSamples.textContent = "0";
+            outlierNote.className = "outlier-note";
+            outlierNote.textContent = "Outlier insight will appear after analysis.";
+
+            trendData.sensor1 = [];
+            trendData.sensor2 = [];
+            trendData.sensor3 = [];
+            trendData.average = [];
+            trendData.threshold = [];
+            trendData.timestamps = [];
+
+            stopLiveMode();
+
+            renderSnapshotChart(getSensorValues(), Number(thresholdInput.value));
+            renderTrendChart(
+                getSensorValues(),
+                Number(thresholdInput.value),
+                formatTimestamp(new Date())
+            );
+
+            headerStatus.textContent = "System state: idle";
+            headerStatus.style.background = "rgba(18, 110, 87, 0.12)";
+            headerStatus.style.borderColor = "rgba(18, 110, 87, 0.25)";
+
+            setStatus("Dashboard reset.", false);
+        }
+
+        sensorInputs.forEach((input) => {
+            input.addEventListener("input", () => {
+                syncSliderLabels();
+                renderSnapshotChart(getSensorValues(), Number(thresholdInput.value));
+            });
+        });
+        showControlsBtn.addEventListener("click", () => setMobileView("controls"));
+        showChartsBtn.addEventListener("click", () => setMobileView("charts"));
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 760) {
+                mainLayout.classList.remove("show-charts");
+                mainLayout.classList.add("show-controls");
+                showControlsBtn.classList.add("is-active");
+                showChartsBtn.classList.remove("is-active");
+            }
+        });
+        thresholdInput.addEventListener("input", () => {
+            renderSnapshotChart(getSensorValues(), Number(thresholdInput.value));
+        });
+        submitButton.addEventListener("click", submitData);
+        resetButton.addEventListener("click", resetDashboard);
+        liveButton.addEventListener("click", toggleLiveMode);
+        henryNextBtn.addEventListener("click", nextHenryMessage);
+        henryDismissBtn.addEventListener("click", dismissHenryTips);
+
+        syncSliderLabels();
+        renderSnapshotChart(getSensorValues(), Number(thresholdInput.value));
+        renderTrendChart(
+            getSensorValues(),
+            Number(thresholdInput.value),
+            formatTimestamp(new Date())
+        );
+        setStatus("Ready. Adjust sliders and analyze readings.", false);
+        initHenryGuide();
+    </script>
+</body>
+</html>

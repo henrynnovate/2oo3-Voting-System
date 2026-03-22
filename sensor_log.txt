@@ -1,0 +1,820 @@
+2025-02-11 19:21:19,143 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-11 19:21:19,143 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:22:51,565 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-11 19:22:51,565 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:22:51,599 -  * Restarting with stat
+2025-02-11 19:22:52,729 -  * Debugger is active!
+2025-02-11 19:22:52,757 -  * Debugger PIN: 111-557-140
+2025-02-11 19:23:34,876 - 127.0.0.1 - - [11/Feb/2025 19:23:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-11 19:23:35,375 - 127.0.0.1 - - [11/Feb/2025 19:23:35] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-02-11 19:23:35,385 - 127.0.0.1 - - [11/Feb/2025 19:23:35] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-02-11 19:23:37,452 - 127.0.0.1 - - [11/Feb/2025 19:23:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-02-11 19:23:37,804 - 127.0.0.1 - - [11/Feb/2025 19:23:37] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-11 19:24:06,426 - 127.0.0.1 - - [11/Feb/2025 19:24:06] "GET / HTTP/1.1" 200 -
+2025-02-11 19:24:07,535 - 127.0.0.1 - - [11/Feb/2025 19:24:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-11 19:24:37,494 - Sensor Readings: [20.0, 45.0, 0.2]
+2025-02-11 19:24:37,494 - 127.0.0.1 - - [11/Feb/2025 19:24:37] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:24:52,104 - Sensor Readings: [76.0, 45.0, 50.0]
+2025-02-11 19:24:52,104 - 127.0.0.1 - - [11/Feb/2025 19:24:52] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:24:55,385 - Sensor Readings: [76.0, 45.0, 60.0]
+2025-02-11 19:24:55,385 - ALARM TRIGGERED!
+2025-02-11 19:24:55,385 - 127.0.0.1 - - [11/Feb/2025 19:24:55] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:24:59,380 - Sensor Readings: [76.0, 45.0, 60.0]
+2025-02-11 19:24:59,380 - ALARM TRIGGERED!
+2025-02-11 19:24:59,380 - 127.0.0.1 - - [11/Feb/2025 19:24:59] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:25:05,634 - 127.0.0.1 - - [11/Feb/2025 19:25:05] "GET / HTTP/1.1" 200 -
+2025-02-11 19:25:17,044 - Sensor Readings: [70.0, 40.0, 89.0]
+2025-02-11 19:25:17,044 - ALARM TRIGGERED!
+2025-02-11 19:25:17,044 - 127.0.0.1 - - [11/Feb/2025 19:25:17] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:28:20,184 - 127.0.0.1 - - [11/Feb/2025 19:28:20] "GET / HTTP/1.1" 200 -
+2025-02-11 19:28:34,534 - Sensor Readings: [30.0, 45.0, 22.0]
+2025-02-11 19:28:34,534 - 127.0.0.1 - - [11/Feb/2025 19:28:34] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:28:40,934 - Sensor Readings: [90.0, 88.0, 22.0]
+2025-02-11 19:28:40,934 - ALARM TRIGGERED!
+2025-02-11 19:28:40,934 - 127.0.0.1 - - [11/Feb/2025 19:28:40] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:28:45,930 - Sensor Readings: [90.0, 88.0, 78.0]
+2025-02-11 19:28:45,930 - ALARM TRIGGERED!
+2025-02-11 19:28:45,930 - 127.0.0.1 - - [11/Feb/2025 19:28:45] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:28:47,661 - Sensor Readings: [90.0, 88.0, 78.0]
+2025-02-11 19:28:47,661 - ALARM TRIGGERED!
+2025-02-11 19:28:47,661 - 127.0.0.1 - - [11/Feb/2025 19:28:47] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:28:55,964 - Sensor Readings: [90.0, 0.0, 0.0]
+2025-02-11 19:28:55,964 - 127.0.0.1 - - [11/Feb/2025 19:28:55] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:34:24,654 - 127.0.0.1 - - [11/Feb/2025 19:34:24] "GET / HTTP/1.1" 200 -
+2025-02-11 19:34:31,371 - Sensor Readings: [20.0, 50.0, 60.0]
+2025-02-11 19:34:31,371 - 127.0.0.1 - - [11/Feb/2025 19:34:31] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:34:50,134 - Sensor Readings: [20.0, 60.0, 81.0]
+2025-02-11 19:34:50,134 - ALARM TRIGGERED!
+2025-02-11 19:34:50,134 - 127.0.0.1 - - [11/Feb/2025 19:34:50] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:38:38,201 - 127.0.0.1 - - [11/Feb/2025 19:38:38] "GET / HTTP/1.1" 200 -
+2025-02-11 19:39:16,850 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\app.py', reloading
+2025-02-11 19:39:17,286 -  * Restarting with stat
+2025-02-11 19:39:18,276 -  * Debugger is active!
+2025-02-11 19:39:18,292 -  * Debugger PIN: 111-557-140
+2025-02-11 19:39:18,876 - 127.0.0.1 - - [11/Feb/2025 19:39:18] "GET / HTTP/1.1" 200 -
+2025-02-11 19:39:28,481 - Sensor Readings: [20.0, 50.0, 60.0]
+2025-02-11 19:39:28,482 - 127.0.0.1 - - [11/Feb/2025 19:39:28] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:39:43,484 - Sensor Readings: [20.0, 40.0, 60.0]
+2025-02-11 19:39:43,485 - 127.0.0.1 - - [11/Feb/2025 19:39:43] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:39:58,237 - Sensor Readings: [100.0, 40.0, 80.0]
+2025-02-11 19:39:58,237 - ALARM TRIGGERED!
+2025-02-11 19:39:58,237 - 127.0.0.1 - - [11/Feb/2025 19:39:58] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:40:13,572 - Sensor Readings: [100.0, 79.0, 80.0]
+2025-02-11 19:40:13,572 - ALARM TRIGGERED!
+2025-02-11 19:40:13,573 - 127.0.0.1 - - [11/Feb/2025 19:40:13] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:40:27,156 - Sensor Readings: [100.0, 79.0, 20.0]
+2025-02-11 19:40:27,156 - ALARM TRIGGERED!
+2025-02-11 19:40:27,156 - 127.0.0.1 - - [11/Feb/2025 19:40:27] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:41:26,452 - Sensor Readings: [16.0, 79.0, 22.0]
+2025-02-11 19:41:26,452 - 127.0.0.1 - - [11/Feb/2025 19:41:26] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:44:51,520 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\app.py', reloading
+2025-02-11 19:44:51,608 -  * Restarting with stat
+2025-02-11 19:47:34,211 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-11 19:47:34,212 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:47:34,226 -  * Restarting with stat
+2025-02-11 19:47:34,794 -  * Debugger is active!
+2025-02-11 19:47:34,804 -  * Debugger PIN: 111-557-140
+2025-02-11 19:47:38,012 - 127.0.0.1 - - [11/Feb/2025 19:47:38] "GET / HTTP/1.1" 200 -
+2025-02-11 19:47:50,770 - Sensor Readings: [40.0, 30.0, 20.0]
+2025-02-11 19:47:50,770 - ALARM TRIGGERED!
+2025-02-11 19:47:50,771 - 127.0.0.1 - - [11/Feb/2025 19:47:50] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:47:57,304 - Sensor Readings: [40.0, 20.0, 20.0]
+2025-02-11 19:47:57,304 - ALARM TRIGGERED!
+2025-02-11 19:47:57,304 - 127.0.0.1 - - [11/Feb/2025 19:47:57] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:47:59,006 - Sensor Readings: [40.0, 20.0, 20.0]
+2025-02-11 19:47:59,007 - ALARM TRIGGERED!
+2025-02-11 19:47:59,007 - 127.0.0.1 - - [11/Feb/2025 19:47:59] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:47:59,676 - Sensor Readings: [40.0, 20.0, 20.0]
+2025-02-11 19:47:59,676 - ALARM TRIGGERED!
+2025-02-11 19:47:59,676 - 127.0.0.1 - - [11/Feb/2025 19:47:59] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:47:59,866 - Sensor Readings: [40.0, 20.0, 20.0]
+2025-02-11 19:47:59,866 - ALARM TRIGGERED!
+2025-02-11 19:47:59,867 - 127.0.0.1 - - [11/Feb/2025 19:47:59] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:48:02,188 - Sensor Readings: [40.0, 20.0, 20.0]
+2025-02-11 19:48:02,188 - ALARM TRIGGERED!
+2025-02-11 19:48:02,188 - 127.0.0.1 - - [11/Feb/2025 19:48:02] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:52:34,108 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\app.py', reloading
+2025-02-11 19:52:34,192 -  * Restarting with stat
+2025-02-11 19:52:34,867 -  * Debugger is active!
+2025-02-11 19:52:34,877 -  * Debugger PIN: 111-557-140
+2025-02-11 19:52:39,213 - 127.0.0.1 - - [11/Feb/2025 19:52:39] "GET / HTTP/1.1" 200 -
+2025-02-11 19:52:49,067 - Sensor Readings: [30.0, 10.0, 10.0]
+2025-02-11 19:52:49,067 - Error: check_alarm() missing 1 required positional argument: 'threshold'
+2025-02-11 19:52:49,067 - 127.0.0.1 - - [11/Feb/2025 19:52:49] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -
+2025-02-11 19:53:38,705 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\app.py', reloading
+2025-02-11 19:53:38,781 -  * Restarting with stat
+2025-02-11 19:53:39,623 -  * Debugger is active!
+2025-02-11 19:53:39,640 -  * Debugger PIN: 111-557-140
+2025-02-11 19:53:41,634 - 127.0.0.1 - - [11/Feb/2025 19:53:41] "GET / HTTP/1.1" 200 -
+2025-02-11 19:53:48,460 - Sensor Readings: [10.0, 20.0, 25.0], Threshold: 20.0
+2025-02-11 19:53:48,460 - 127.0.0.1 - - [11/Feb/2025 19:53:48] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:53:54,110 - Sensor Readings: [30.0, 20.0, 30.0], Threshold: 20.0
+2025-02-11 19:53:54,110 - ALARM TRIGGERED!
+2025-02-11 19:53:54,111 - 127.0.0.1 - - [11/Feb/2025 19:53:54] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:55:06,274 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\app.py', reloading
+2025-02-11 19:55:06,460 -  * Restarting with stat
+2025-02-11 19:56:57,996 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-11 19:56:57,996 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:56:58,003 -  * Restarting with stat
+2025-02-11 19:56:58,541 -  * Debugger is active!
+2025-02-11 19:56:58,555 -  * Debugger PIN: 111-557-140
+2025-02-11 19:57:00,679 - 127.0.0.1 - - [11/Feb/2025 19:57:00] "GET / HTTP/1.1" 200 -
+2025-02-11 19:57:10,144 - Sensor Readings: [50.0, 70.0, 32.0], Threshold: 0.0
+2025-02-11 19:57:10,144 - ALARM TRIGGERED!
+2025-02-11 19:57:10,144 - 127.0.0.1 - - [11/Feb/2025 19:57:10] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:57:28,880 - Sensor Readings: [49.9, 70.0, 32.0], Threshold: 0.0
+2025-02-11 19:57:28,880 - ALARM TRIGGERED!
+2025-02-11 19:57:28,880 - 127.0.0.1 - - [11/Feb/2025 19:57:28] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:57:35,194 - Sensor Readings: [49.0, 70.0, 32.0], Threshold: 0.0
+2025-02-11 19:57:35,194 - ALARM TRIGGERED!
+2025-02-11 19:57:35,195 - 127.0.0.1 - - [11/Feb/2025 19:57:35] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:57:40,580 - Sensor Readings: [40.0, 70.0, 32.0], Threshold: 0.0
+2025-02-11 19:57:40,580 - ALARM TRIGGERED!
+2025-02-11 19:57:40,581 - 127.0.0.1 - - [11/Feb/2025 19:57:40] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:58:52,217 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\advApp.py', reloading
+2025-02-11 19:58:52,298 -  * Restarting with stat
+2025-02-11 19:58:53,049 -  * Debugger is active!
+2025-02-11 19:58:53,069 -  * Debugger PIN: 111-557-140
+2025-02-11 19:58:55,729 - 127.0.0.1 - - [11/Feb/2025 19:58:55] "GET / HTTP/1.1" 200 -
+2025-02-11 19:59:02,044 - Sensor Readings: [30.0, 50.0, 70.0]
+2025-02-11 19:59:02,044 - 127.0.0.1 - - [11/Feb/2025 19:59:02] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:05,357 - Sensor Readings: [30.0, 51.0, 70.0]
+2025-02-11 19:59:05,357 - ALARM TRIGGERED!
+2025-02-11 19:59:05,358 - 127.0.0.1 - - [11/Feb/2025 19:59:05] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:12,198 - Sensor Readings: [30.0, 50.99, 70.0]
+2025-02-11 19:59:12,199 - ALARM TRIGGERED!
+2025-02-11 19:59:12,199 - 127.0.0.1 - - [11/Feb/2025 19:59:12] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:17,370 - Sensor Readings: [30.0, 50.95, 70.0]
+2025-02-11 19:59:17,370 - ALARM TRIGGERED!
+2025-02-11 19:59:17,371 - 127.0.0.1 - - [11/Feb/2025 19:59:17] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:20,903 - Sensor Readings: [30.0, 50.89, 70.0]
+2025-02-11 19:59:20,903 - ALARM TRIGGERED!
+2025-02-11 19:59:20,903 - 127.0.0.1 - - [11/Feb/2025 19:59:20] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:22,403 - Sensor Readings: [30.0, 50.8, 70.0]
+2025-02-11 19:59:22,403 - ALARM TRIGGERED!
+2025-02-11 19:59:22,403 - 127.0.0.1 - - [11/Feb/2025 19:59:22] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:26,276 - Sensor Readings: [30.0, 50.5, 70.0]
+2025-02-11 19:59:26,276 - ALARM TRIGGERED!
+2025-02-11 19:59:26,276 - 127.0.0.1 - - [11/Feb/2025 19:59:26] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:28,928 - Sensor Readings: [30.0, 50.3, 70.0]
+2025-02-11 19:59:28,928 - ALARM TRIGGERED!
+2025-02-11 19:59:28,929 - 127.0.0.1 - - [11/Feb/2025 19:59:28] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:31,323 - Sensor Readings: [30.0, 50.0, 70.0]
+2025-02-11 19:59:31,323 - 127.0.0.1 - - [11/Feb/2025 19:59:31] "POST /submit HTTP/1.1" 200 -
+2025-02-11 19:59:34,036 - Sensor Readings: [30.0, 50.1, 70.0]
+2025-02-11 19:59:34,037 - ALARM TRIGGERED!
+2025-02-11 19:59:34,037 - 127.0.0.1 - - [11/Feb/2025 19:59:34] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:33:55,479 - Sensor Readings: [70.0, 87.0, 70.0]
+2025-02-12 06:33:55,481 - ALARM TRIGGERED!
+2025-02-12 06:33:55,483 - 127.0.0.1 - - [12/Feb/2025 06:33:55] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:34:04,239 - Sensor Readings: [70.0, 87.0, 60.0]
+2025-02-12 06:34:04,239 - ALARM TRIGGERED!
+2025-02-12 06:34:04,239 - 127.0.0.1 - - [12/Feb/2025 06:34:04] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:34:07,574 - Sensor Readings: [70.0, 87.0, 604.0]
+2025-02-12 06:34:07,575 - ALARM TRIGGERED!
+2025-02-12 06:34:07,575 - 127.0.0.1 - - [12/Feb/2025 06:34:07] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:34:10,784 - Sensor Readings: [70.0, 87.0, 60.0]
+2025-02-12 06:34:10,784 - ALARM TRIGGERED!
+2025-02-12 06:34:10,784 - 127.0.0.1 - - [12/Feb/2025 06:34:10] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:34:14,473 - 127.0.0.1 - - [12/Feb/2025 06:34:14] "GET / HTTP/1.1" 200 -
+2025-02-12 06:34:24,669 - Sensor Readings: [60.0, 23.0, 70.0]
+2025-02-12 06:34:24,669 - ALARM TRIGGERED!
+2025-02-12 06:34:24,670 - 127.0.0.1 - - [12/Feb/2025 06:34:24] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:34:33,957 - Sensor Readings: [50.0, 23.0, 100.0]
+2025-02-12 06:34:33,957 - 127.0.0.1 - - [12/Feb/2025 06:34:33] "POST /submit HTTP/1.1" 200 -
+2025-02-12 06:50:11,749 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\advApp.py', reloading
+2025-02-12 06:50:12,064 -  * Restarting with stat
+2025-02-12 07:10:49,501 -  * Restarting with stat
+2025-02-12 07:10:50,868 -  * Debugger is active!
+2025-02-12 07:10:50,887 -  * Debugger PIN: 111-557-140
+2025-02-12 07:10:51,630 - 127.0.0.1 - - [12/Feb/2025 07:10:51] "GET / HTTP/1.1" 200 -
+2025-02-12 07:10:56,213 - Sensor Readings: [50.0, 60.0, 50.0]
+2025-02-12 07:10:56,214 - 127.0.0.1 - - [12/Feb/2025 07:10:56] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:11:08,087 - Sensor Readings: [50.0, 60.0, 60.0]
+2025-02-12 07:11:08,087 - ALARM TRIGGERED!
+2025-02-12 07:11:08,088 - 127.0.0.1 - - [12/Feb/2025 07:11:08] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:11:36,526 - 127.0.0.1 - - [12/Feb/2025 07:11:36] "GET / HTTP/1.1" 200 -
+2025-02-12 07:11:46,358 - Sensor Readings: [49.0, 48.0, 30.0]
+2025-02-12 07:11:46,359 - 127.0.0.1 - - [12/Feb/2025 07:11:46] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:11:59,388 - 127.0.0.1 - - [12/Feb/2025 07:11:59] "GET / HTTP/1.1" 200 -
+2025-02-12 07:12:14,670 - Sensor Readings: [50.0, 60.0, 70.0]
+2025-02-12 07:12:14,670 - ALARM TRIGGERED!
+2025-02-12 07:12:14,671 - 127.0.0.1 - - [12/Feb/2025 07:12:14] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:12:25,165 - Sensor Readings: [8.0, 30.0, 70.0]
+2025-02-12 07:12:25,166 - 127.0.0.1 - - [12/Feb/2025 07:12:25] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:12:47,196 - Sensor Readings: [8.0, 45.0, 70.0]
+2025-02-12 07:12:47,196 - 127.0.0.1 - - [12/Feb/2025 07:12:47] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:13:11,178 - Sensor Readings: [80.0, 20.0, 50.0]
+2025-02-12 07:13:11,179 - 127.0.0.1 - - [12/Feb/2025 07:13:11] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:20:21,905 - Sensor Readings: [45.0, 20.0, 60.0]
+2025-02-12 07:20:21,906 - 127.0.0.1 - - [12/Feb/2025 07:20:21] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:23:43,399 - 127.0.0.1 - - [12/Feb/2025 07:23:43] "GET / HTTP/1.1" 200 -
+2025-02-12 07:23:57,213 - Sensor Readings: [191.0, 202.0, 189.0]
+2025-02-12 07:23:57,213 - ALARM TRIGGERED!
+2025-02-12 07:23:57,214 - 127.0.0.1 - - [12/Feb/2025 07:23:57] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:25:09,923 - 127.0.0.1 - - [12/Feb/2025 07:25:09] "GET / HTTP/1.1" 200 -
+2025-02-12 07:25:22,571 - Sensor Readings: [300.0, 300.0, 300.0]
+2025-02-12 07:25:22,571 - ALARM TRIGGERED!
+2025-02-12 07:25:22,572 - 127.0.0.1 - - [12/Feb/2025 07:25:22] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:27:52,565 - 127.0.0.1 - - [12/Feb/2025 07:27:52] "GET / HTTP/1.1" 200 -
+2025-02-12 07:28:09,807 - Sensor Readings: [50.0, 60.0, 70.0]
+2025-02-12 07:28:09,808 - ALARM TRIGGERED!
+2025-02-12 07:28:09,809 - 127.0.0.1 - - [12/Feb/2025 07:28:09] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:34:25,399 - 127.0.0.1 - - [12/Feb/2025 07:34:25] "GET / HTTP/1.1" 200 -
+2025-02-12 07:37:50,475 - 127.0.0.1 - - [12/Feb/2025 07:37:50] "GET / HTTP/1.1" 200 -
+2025-02-12 07:38:27,840 - 127.0.0.1 - - [12/Feb/2025 07:38:27] "GET / HTTP/1.1" 200 -
+2025-02-12 07:41:45,831 - 127.0.0.1 - - [12/Feb/2025 07:41:45] "GET / HTTP/1.1" 200 -
+2025-02-12 07:44:53,666 - 127.0.0.1 - - [12/Feb/2025 07:44:53] "GET / HTTP/1.1" 200 -
+2025-02-12 07:45:52,092 - 127.0.0.1 - - [12/Feb/2025 07:45:52] "GET / HTTP/1.1" 200 -
+2025-02-12 07:46:28,404 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-12 07:46:28,405 - [33mPress CTRL+C to quit[0m
+2025-02-12 07:46:28,417 -  * Restarting with stat
+2025-02-12 07:46:29,266 -  * Debugger is active!
+2025-02-12 07:46:29,284 -  * Debugger PIN: 111-557-140
+2025-02-12 07:46:33,232 - 127.0.0.1 - - [12/Feb/2025 07:46:33] "GET / HTTP/1.1" 200 -
+2025-02-12 07:50:10,021 - 127.0.0.1 - - [12/Feb/2025 07:50:10] "GET / HTTP/1.1" 200 -
+2025-02-12 07:50:19,328 - Sensor Readings: [74.0, 82.0, 50.0]
+2025-02-12 07:50:19,328 - ALARM TRIGGERED!
+2025-02-12 07:50:19,329 - 127.0.0.1 - - [12/Feb/2025 07:50:19] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:50:33,899 - Sensor Readings: [28.0, 82.0, 50.0]
+2025-02-12 07:50:33,902 - 127.0.0.1 - - [12/Feb/2025 07:50:33] "POST /submit HTTP/1.1" 200 -
+2025-02-12 07:50:58,041 - Sensor Readings: [28.0, 34.0, 80.0]
+2025-02-12 07:50:58,041 - 127.0.0.1 - - [12/Feb/2025 07:50:58] "POST /submit HTTP/1.1" 200 -
+2025-02-12 08:14:27,899 - Sensor Readings: [28.0, 34.0, 80.0]
+2025-02-12 08:14:27,900 - 127.0.0.1 - - [12/Feb/2025 08:14:27] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:17:25,038 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-12 12:17:25,039 - [33mPress CTRL+C to quit[0m
+2025-02-12 12:17:25,049 -  * Restarting with stat
+2025-02-12 12:17:25,745 -  * Debugger is active!
+2025-02-12 12:17:25,759 -  * Debugger PIN: 111-557-140
+2025-02-12 12:17:33,241 - 127.0.0.1 - - [12/Feb/2025 12:17:33] "GET / HTTP/1.1" 200 -
+2025-02-12 12:19:03,970 - Sensor Readings: [50.0, 50.0, 50.0]
+2025-02-12 12:19:03,971 - 127.0.0.1 - - [12/Feb/2025 12:19:03] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:19:04,247 - Sensor Readings: [50.0, 50.0, 50.0]
+2025-02-12 12:19:04,248 - 127.0.0.1 - - [12/Feb/2025 12:19:04] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:19:22,061 - Sensor Readings: [81.0, 124.0, 141.0]
+2025-02-12 12:19:22,065 - ALARM TRIGGERED!
+2025-02-12 12:19:22,066 - 127.0.0.1 - - [12/Feb/2025 12:19:22] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:19:48,011 - Sensor Readings: [74.0, 124.0, 55.0]
+2025-02-12 12:19:48,011 - ALARM TRIGGERED!
+2025-02-12 12:19:48,011 - 127.0.0.1 - - [12/Feb/2025 12:19:48] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:32:39,110 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-12 12:32:39,111 - [33mPress CTRL+C to quit[0m
+2025-02-12 12:32:39,123 -  * Restarting with stat
+2025-02-12 12:32:39,989 -  * Debugger is active!
+2025-02-12 12:32:40,010 -  * Debugger PIN: 111-557-140
+2025-02-12 12:32:45,322 - 127.0.0.1 - - [12/Feb/2025 12:32:45] "GET / HTTP/1.1" 200 -
+2025-02-12 12:32:54,727 - Sensor Readings: [96.0, 129.0, 137.0]
+2025-02-12 12:32:54,728 - ALARM TRIGGERED!
+2025-02-12 12:32:54,728 - 127.0.0.1 - - [12/Feb/2025 12:32:54] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:33:05,798 - Sensor Readings: [158.0, 39.0, 176.0]
+2025-02-12 12:33:05,798 - ALARM TRIGGERED!
+2025-02-12 12:33:05,799 - 127.0.0.1 - - [12/Feb/2025 12:33:05] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:33:18,145 - Sensor Readings: [158.0, 111.0, 118.0]
+2025-02-12 12:33:18,145 - ALARM TRIGGERED!
+2025-02-12 12:33:18,146 - 127.0.0.1 - - [12/Feb/2025 12:33:18] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:33:24,588 - Sensor Readings: [72.0, 111.0, 118.0]
+2025-02-12 12:33:24,589 - ALARM TRIGGERED!
+2025-02-12 12:33:24,589 - 127.0.0.1 - - [12/Feb/2025 12:33:24] "POST /submit HTTP/1.1" 200 -
+2025-02-12 12:34:25,533 - Sensor Readings: [134.0, 111.0, 118.0]
+2025-02-12 12:34:25,533 - ALARM TRIGGERED!
+2025-02-12 12:34:25,533 - 127.0.0.1 - - [12/Feb/2025 12:34:25] "POST /submit HTTP/1.1" 200 -
+2025-02-12 22:19:28,156 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-12 22:19:28,157 - [33mPress CTRL+C to quit[0m
+2025-02-12 22:19:28,164 -  * Restarting with stat
+2025-02-12 22:19:28,631 -  * Debugger is active!
+2025-02-12 22:19:28,641 -  * Debugger PIN: 111-557-140
+2025-02-12 22:19:50,602 - 127.0.0.1 - - [12/Feb/2025 22:19:50] "GET / HTTP/1.1" 200 -
+2025-02-12 22:19:50,680 - 127.0.0.1 - - [12/Feb/2025 22:19:50] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2025-02-12 22:19:54,700 - 127.0.0.1 - - [12/Feb/2025 22:19:54] "GET / HTTP/1.1" 200 -
+2025-02-12 22:19:54,745 - 127.0.0.1 - - [12/Feb/2025 22:19:54] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2025-02-12 22:19:57,469 - 127.0.0.1 - - [12/Feb/2025 22:19:57] "GET / HTTP/1.1" 200 -
+2025-02-12 22:19:57,512 - 127.0.0.1 - - [12/Feb/2025 22:19:57] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2025-02-12 22:20:13,606 - 127.0.0.1 - - [12/Feb/2025 22:20:13] "GET / HTTP/1.1" 200 -
+2025-02-12 22:20:13,645 - 127.0.0.1 - - [12/Feb/2025 22:20:13] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2025-02-12 22:20:43,350 - 127.0.0.1 - - [12/Feb/2025 22:20:43] "GET / HTTP/1.1" 200 -
+2025-02-12 23:07:49,989 - Sensor Readings: [21.0, 89.0, 35.0]
+2025-02-12 23:07:49,991 - Significant deviation detected among sensor readings!
+2025-02-12 23:07:49,996 - 127.0.0.1 - - [12/Feb/2025 23:07:49] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:07:59,147 - Sensor Readings: [125.0, 89.0, 35.0]
+2025-02-12 23:07:59,148 - ALARM TRIGGERED!
+2025-02-12 23:07:59,148 - Significant deviation detected among sensor readings!
+2025-02-12 23:07:59,148 - 127.0.0.1 - - [12/Feb/2025 23:07:59] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:08:16,615 - Sensor Readings: [32.0, 89.0, 35.0]
+2025-02-12 23:08:16,616 - Significant deviation detected among sensor readings!
+2025-02-12 23:08:16,616 - 127.0.0.1 - - [12/Feb/2025 23:08:16] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:08:28,569 - Sensor Readings: [81.0, 22.0, 14.0]
+2025-02-12 23:08:28,570 - Significant deviation detected among sensor readings!
+2025-02-12 23:08:28,570 - 127.0.0.1 - - [12/Feb/2025 23:08:28] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:14,701 - 127.0.0.1 - - [12/Feb/2025 23:51:14] "GET / HTTP/1.1" 200 -
+2025-02-12 23:51:28,455 - Sensor Readings: [33.0, 28.0, 36.0]
+2025-02-12 23:51:28,455 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:28,455 - 127.0.0.1 - - [12/Feb/2025 23:51:28] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:34,728 - Sensor Readings: [33.0, 28.0, 90.0]
+2025-02-12 23:51:34,728 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:34,729 - 127.0.0.1 - - [12/Feb/2025 23:51:34] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:37,906 - Sensor Readings: [33.0, 82.0, 90.0]
+2025-02-12 23:51:37,906 - ALARM TRIGGERED!
+2025-02-12 23:51:37,906 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:37,906 - 127.0.0.1 - - [12/Feb/2025 23:51:37] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:39,652 - Sensor Readings: [33.0, 82.0, 90.0]
+2025-02-12 23:51:39,653 - ALARM TRIGGERED!
+2025-02-12 23:51:39,653 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:39,653 - 127.0.0.1 - - [12/Feb/2025 23:51:39] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:40,112 - Sensor Readings: [33.0, 82.0, 90.0]
+2025-02-12 23:51:40,112 - ALARM TRIGGERED!
+2025-02-12 23:51:40,112 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:40,113 - 127.0.0.1 - - [12/Feb/2025 23:51:40] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:40,331 - Sensor Readings: [33.0, 82.0, 90.0]
+2025-02-12 23:51:40,331 - ALARM TRIGGERED!
+2025-02-12 23:51:40,331 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:40,332 - 127.0.0.1 - - [12/Feb/2025 23:51:40] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:40,535 - Sensor Readings: [33.0, 82.0, 90.0]
+2025-02-12 23:51:40,535 - ALARM TRIGGERED!
+2025-02-12 23:51:40,535 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:40,535 - 127.0.0.1 - - [12/Feb/2025 23:51:40] "POST /submit HTTP/1.1" 200 -
+2025-02-12 23:51:46,906 - Sensor Readings: [33.0, 82.0, 90.0]
+2025-02-12 23:51:46,907 - ALARM TRIGGERED!
+2025-02-12 23:51:46,907 - Significant deviation detected among sensor readings!
+2025-02-12 23:51:46,908 - 127.0.0.1 - - [12/Feb/2025 23:51:46] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:09:07,015 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\advApp.py', reloading
+2025-02-13 00:09:07,380 -  * Restarting with stat
+2025-02-13 00:09:08,421 -  * Debugger is active!
+2025-02-13 00:09:08,435 -  * Debugger PIN: 111-557-140
+2025-02-13 00:10:24,263 - 127.0.0.1 - - [13/Feb/2025 00:10:24] "GET / HTTP/1.1" 200 -
+2025-02-13 00:10:32,681 - 127.0.0.1 - - [13/Feb/2025 00:10:32] "GET / HTTP/1.1" 200 -
+2025-02-13 00:10:33,917 - 127.0.0.1 - - [13/Feb/2025 00:10:33] "GET / HTTP/1.1" 200 -
+2025-02-13 00:10:35,010 - 127.0.0.1 - - [13/Feb/2025 00:10:35] "GET / HTTP/1.1" 200 -
+2025-02-13 00:10:52,691 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-13 00:10:52,692 - [33mPress CTRL+C to quit[0m
+2025-02-13 00:10:52,700 -  * Restarting with stat
+2025-02-13 00:10:53,345 -  * Debugger is active!
+2025-02-13 00:10:53,355 -  * Debugger PIN: 111-557-140
+2025-02-13 00:11:04,045 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\advApp.py', reloading
+2025-02-13 00:11:04,128 -  * Restarting with stat
+2025-02-13 00:11:04,896 -  * Debugger is active!
+2025-02-13 00:11:04,906 -  * Debugger PIN: 111-557-140
+2025-02-13 00:11:05,528 - 127.0.0.1 - - [13/Feb/2025 00:11:05] "GET / HTTP/1.1" 200 -
+2025-02-13 00:13:27,392 - Sensor Readings: [30.0, 100.0, 35.0]
+2025-02-13 00:13:27,392 - Significant deviation detected among sensor readings!
+2025-02-13 00:13:27,393 - 127.0.0.1 - - [13/Feb/2025 00:13:27] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:13:40,939 - Sensor Readings: [30.0, 37.0, 35.0]
+2025-02-13 00:13:40,939 - Significant deviation detected among sensor readings!
+2025-02-13 00:13:40,939 - 127.0.0.1 - - [13/Feb/2025 00:13:40] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:13:54,773 - Sensor Readings: [30.0, 65.0, 81.0]
+2025-02-13 00:13:54,773 - ALARM TRIGGERED!
+2025-02-13 00:13:54,773 - Significant deviation detected among sensor readings!
+2025-02-13 00:13:54,774 - 127.0.0.1 - - [13/Feb/2025 00:13:54] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:17:50,492 - Sensor Readings: [61.0, 65.0, 81.0]
+2025-02-13 00:17:50,492 - ALARM TRIGGERED!
+2025-02-13 00:17:50,492 - Significant deviation detected among sensor readings!
+2025-02-13 00:17:50,493 - 127.0.0.1 - - [13/Feb/2025 00:17:50] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:18:01,340 - Sensor Readings: [35.0, 28.0, 81.0]
+2025-02-13 00:18:01,340 - Significant deviation detected among sensor readings!
+2025-02-13 00:18:01,341 - 127.0.0.1 - - [13/Feb/2025 00:18:01] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:18:14,230 - Sensor Readings: [35.0, 84.0, 170.0]
+2025-02-13 00:18:14,231 - ALARM TRIGGERED!
+2025-02-13 00:18:14,231 - Significant deviation detected among sensor readings!
+2025-02-13 00:18:14,232 - 127.0.0.1 - - [13/Feb/2025 00:18:14] "POST /submit HTTP/1.1" 200 -
+2025-02-13 00:32:50,727 - Sensor Readings: [35.0, 17.0, 9.0]
+2025-02-13 00:32:50,727 - Significant deviation detected among sensor readings!
+2025-02-13 00:32:50,728 - 127.0.0.1 - - [13/Feb/2025 00:32:50] "POST /submit HTTP/1.1" 200 -
+2025-02-13 06:35:45,559 - 127.0.0.1 - - [13/Feb/2025 06:35:45] "GET / HTTP/1.1" 200 -
+2025-02-13 06:36:00,517 - Sensor Readings: [104.0, 93.0, 37.0]
+2025-02-13 06:36:00,518 - ALARM TRIGGERED!
+2025-02-13 06:36:00,518 - Significant deviation detected among sensor readings!
+2025-02-13 06:36:00,518 - 127.0.0.1 - - [13/Feb/2025 06:36:00] "POST /submit HTTP/1.1" 200 -
+2025-02-13 06:36:13,233 - Sensor Readings: [45.0, 41.0, 30.0]
+2025-02-13 06:36:13,233 - Significant deviation detected among sensor readings!
+2025-02-13 06:36:13,234 - 127.0.0.1 - - [13/Feb/2025 06:36:13] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:18:18,645 - 127.0.0.1 - - [14/Feb/2025 09:18:18] "GET / HTTP/1.1" 200 -
+2025-02-14 09:18:29,905 - Sensor Readings: [28.0, 33.0, 80.0]
+2025-02-14 09:18:29,905 - Significant deviation detected among sensor readings!
+2025-02-14 09:18:29,905 - 127.0.0.1 - - [14/Feb/2025 09:18:29] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:18:47,329 - Sensor Readings: [28.0, 72.0, 80.0]
+2025-02-14 09:18:47,329 - ALARM TRIGGERED!
+2025-02-14 09:18:47,329 - Significant deviation detected among sensor readings!
+2025-02-14 09:18:47,329 - 127.0.0.1 - - [14/Feb/2025 09:18:47] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:19:00,398 - Sensor Readings: [74.0, 72.0, 80.0]
+2025-02-14 09:19:00,398 - ALARM TRIGGERED!
+2025-02-14 09:19:00,398 - 127.0.0.1 - - [14/Feb/2025 09:19:00] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:19:11,170 - Sensor Readings: [6.0, 28.0, 44.0]
+2025-02-14 09:19:11,173 - Significant deviation detected among sensor readings!
+2025-02-14 09:19:11,173 - 127.0.0.1 - - [14/Feb/2025 09:19:11] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:19:27,905 - Sensor Readings: [16.0, 28.0, 44.0]
+2025-02-14 09:19:27,906 - Significant deviation detected among sensor readings!
+2025-02-14 09:19:27,906 - 127.0.0.1 - - [14/Feb/2025 09:19:27] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:20:22,490 -  * Detected change in 'C:\\Users\\USER\\Desktop\\voting\\advApp.py', reloading
+2025-02-14 09:20:23,035 -  * Restarting with stat
+2025-02-14 09:20:28,442 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-14 09:20:28,442 - [33mPress CTRL+C to quit[0m
+2025-02-14 09:20:28,455 -  * Restarting with stat
+2025-02-14 09:20:29,690 -  * Debugger is active!
+2025-02-14 09:20:29,716 -  * Debugger PIN: 111-557-140
+2025-02-14 09:20:42,022 - 127.0.0.1 - - [14/Feb/2025 09:20:42] "GET / HTTP/1.1" 200 -
+2025-02-14 09:20:51,435 - Sensor Readings: [104.0, 22.0, 20.0]
+2025-02-14 09:20:51,435 - Significant deviation detected among sensor readings!
+2025-02-14 09:20:51,435 - 127.0.0.1 - - [14/Feb/2025 09:20:51] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:21:02,086 - Sensor Readings: [104.0, 77.0, 20.0]
+2025-02-14 09:21:02,086 - ALARM TRIGGERED!
+2025-02-14 09:21:02,086 - Significant deviation detected among sensor readings!
+2025-02-14 09:21:02,086 - 127.0.0.1 - - [14/Feb/2025 09:21:02] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:21:33,805 - Sensor Readings: [34.0, 9.0, 20.0]
+2025-02-14 09:21:33,805 - 127.0.0.1 - - [14/Feb/2025 09:21:33] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:22:37,034 - Sensor Readings: [34.0, 39.0, 30.0]
+2025-02-14 09:22:37,034 - 127.0.0.1 - - [14/Feb/2025 09:22:37] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:22:47,453 - Sensor Readings: [75.0, 67.0, 30.0]
+2025-02-14 09:22:47,453 - ALARM TRIGGERED!
+2025-02-14 09:22:47,454 - 127.0.0.1 - - [14/Feb/2025 09:22:47] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:23:02,214 - Sensor Readings: [148.0, 104.0, 91.0]
+2025-02-14 09:23:02,214 - ALARM TRIGGERED!
+2025-02-14 09:23:02,214 - Significant deviation detected among sensor readings!
+2025-02-14 09:23:02,214 - 127.0.0.1 - - [14/Feb/2025 09:23:02] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:23:14,545 - Sensor Readings: [39.0, 39.0, 45.0]
+2025-02-14 09:23:14,545 - 127.0.0.1 - - [14/Feb/2025 09:23:14] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:32:33,843 - Sensor Readings: [178.0, 158.0, 166.0]
+2025-02-14 09:32:33,845 - ALARM TRIGGERED!
+2025-02-14 09:32:33,845 - 127.0.0.1 - - [14/Feb/2025 09:32:33] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:32:45,254 - Sensor Readings: [59.0, 60.0, 41.0]
+2025-02-14 09:32:45,254 - ALARM TRIGGERED!
+2025-02-14 09:32:45,254 - 127.0.0.1 - - [14/Feb/2025 09:32:45] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:33:01,224 - Sensor Readings: [23.0, 12.0, 88.0]
+2025-02-14 09:33:01,224 - Significant deviation detected among sensor readings!
+2025-02-14 09:33:01,224 - 127.0.0.1 - - [14/Feb/2025 09:33:01] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:33:23,044 - Sensor Readings: [50.0, 20.0, 9.0]
+2025-02-14 09:33:23,044 - 127.0.0.1 - - [14/Feb/2025 09:33:23] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:33:30,521 - Sensor Readings: [50.0, 19.0, 9.0]
+2025-02-14 09:33:30,521 - 127.0.0.1 - - [14/Feb/2025 09:33:30] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:33:38,824 - Sensor Readings: [50.0, 15.0, 9.0]
+2025-02-14 09:33:38,824 - 127.0.0.1 - - [14/Feb/2025 09:33:38] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:33:38,834 - Sensor Readings: [50.0, 15.0, 9.0]
+2025-02-14 09:33:38,834 - 127.0.0.1 - - [14/Feb/2025 09:33:38] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:40:55,254 - Sensor Readings: [55.0, 11.0, 9.0]
+2025-02-14 09:40:55,254 - 127.0.0.1 - - [14/Feb/2025 09:40:55] "POST /submit HTTP/1.1" 200 -
+2025-02-14 09:41:43,863 - Sensor Readings: [57.0, 11.0, 9.0]
+2025-02-14 09:41:43,863 - Significant deviation detected among sensor readings!
+2025-02-14 09:41:43,863 - 127.0.0.1 - - [14/Feb/2025 09:41:43] "POST /submit HTTP/1.1" 200 -
+2025-02-14 11:15:01,726 - Sensor Readings: [70.0, 88.0, 9.0]
+2025-02-14 11:15:01,726 - ALARM TRIGGERED!
+2025-02-14 11:15:01,726 - Significant deviation detected among sensor readings!
+2025-02-14 11:15:01,726 - 127.0.0.1 - - [14/Feb/2025 11:15:01] "POST /submit HTTP/1.1" 200 -
+2025-02-14 11:15:22,080 - Sensor Readings: [70.0, 34.0, 9.0]
+2025-02-14 11:15:22,080 - Significant deviation detected among sensor readings!
+2025-02-14 11:15:22,080 - 127.0.0.1 - - [14/Feb/2025 11:15:22] "POST /submit HTTP/1.1" 200 -
+2025-02-14 11:15:37,636 - Sensor Readings: [70.0, 34.0, 78.0]
+2025-02-14 11:15:37,636 - ALARM TRIGGERED!
+2025-02-14 11:15:37,636 - 127.0.0.1 - - [14/Feb/2025 11:15:37] "POST /submit HTTP/1.1" 200 -
+2025-02-14 12:09:43,457 - Sensor Readings: [32.0, 34.0, 78.0]
+2025-02-14 12:09:43,457 - 127.0.0.1 - - [14/Feb/2025 12:09:43] "POST /submit HTTP/1.1" 200 -
+2025-02-14 12:09:56,123 - Sensor Readings: [32.0, 34.0, 78.0]
+2025-02-14 12:09:56,123 - 127.0.0.1 - - [14/Feb/2025 12:09:56] "POST /submit HTTP/1.1" 200 -
+2025-03-24 10:33:01,946 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-24 10:33:01,946 - [33mPress CTRL+C to quit[0m
+2025-03-24 10:33:01,954 -  * Restarting with stat
+2025-03-24 10:33:02,661 -  * Debugger is active!
+2025-03-24 10:33:02,676 -  * Debugger PIN: 111-557-140
+2025-03-24 10:33:09,372 - 127.0.0.1 - - [24/Mar/2025 10:33:09] "GET / HTTP/1.1" 200 -
+2025-03-24 10:33:20,151 - 127.0.0.1 - - [24/Mar/2025 10:33:20] "GET / HTTP/1.1" 200 -
+2025-03-24 10:33:23,567 - 127.0.0.1 - - [24/Mar/2025 10:33:23] "GET / HTTP/1.1" 200 -
+2025-03-24 10:33:38,126 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-24 10:33:38,126 - [33mPress CTRL+C to quit[0m
+2025-03-24 10:33:38,135 -  * Restarting with stat
+2025-03-24 10:33:39,323 -  * Debugger is active!
+2025-03-24 10:33:39,346 -  * Debugger PIN: 111-557-140
+2025-03-24 10:34:02,351 - 127.0.0.1 - - [24/Mar/2025 10:34:02] "GET / HTTP/1.1" 200 -
+2025-03-24 10:34:22,602 - Sensor Readings: [48.0, 128.0, 177.0]
+2025-03-24 10:34:22,602 - ALARM TRIGGERED!
+2025-03-24 10:34:22,606 - Significant deviation detected among sensor readings!
+2025-03-24 10:34:22,606 - 127.0.0.1 - - [24/Mar/2025 10:34:22] "POST /submit HTTP/1.1" 200 -
+2025-03-24 10:34:52,671 - Sensor Readings: [59.0, 23.0, 93.0]
+2025-03-24 10:34:52,681 - ALARM TRIGGERED!
+2025-03-24 10:34:52,681 - Significant deviation detected among sensor readings!
+2025-03-24 10:34:52,681 - 127.0.0.1 - - [24/Mar/2025 10:34:52] "POST /submit HTTP/1.1" 200 -
+2025-03-24 10:35:34,281 - Sensor Readings: [35.0, 67.0, 61.0]
+2025-03-24 10:35:34,281 - ALARM TRIGGERED!
+2025-03-24 10:35:34,281 - 127.0.0.1 - - [24/Mar/2025 10:35:34] "POST /submit HTTP/1.1" 200 -
+2025-03-24 10:35:45,021 - Sensor Readings: [19.0, 39.0, 30.0]
+2025-03-24 10:35:45,021 - 127.0.0.1 - - [24/Mar/2025 10:35:45] "POST /submit HTTP/1.1" 200 -
+2025-03-24 10:38:07,611 - Sensor Readings: [59.0, 53.0, 35.0]
+2025-03-24 10:38:07,611 - ALARM TRIGGERED!
+2025-04-02 14:54:02,861 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 14:54:02,861 - [33mPress CTRL+C to quit[0m
+2025-04-02 14:54:02,881 -  * Restarting with stat
+2025-04-02 14:54:04,462 -  * Debugger is active!
+2025-04-02 14:54:04,505 -  * Debugger PIN: 187-881-593
+2025-04-02 14:55:37,195 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 14:55:37,195 - [33mPress CTRL+C to quit[0m
+2025-04-02 14:55:37,203 -  * Restarting with stat
+2025-04-02 14:55:38,179 -  * Debugger is active!
+2025-04-02 14:55:38,205 -  * Debugger PIN: 187-881-593
+2025-04-02 14:56:11,059 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 14:56:11,059 - [33mPress CTRL+C to quit[0m
+2025-04-02 14:56:11,067 -  * Restarting with stat
+2025-04-02 14:56:11,825 -  * Debugger is active!
+2025-04-02 14:56:11,842 -  * Debugger PIN: 187-881-593
+2025-04-02 14:57:16,574 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 14:57:16,574 - [33mPress CTRL+C to quit[0m
+2025-04-02 14:57:16,581 -  * Restarting with stat
+2025-04-02 14:57:17,203 -  * Debugger is active!
+2025-04-02 14:57:17,219 -  * Debugger PIN: 187-881-593
+2025-04-02 14:57:39,269 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 14:57:39,269 - [33mPress CTRL+C to quit[0m
+2025-04-02 14:57:39,285 -  * Restarting with stat
+2025-04-02 14:57:39,924 -  * Debugger is active!
+2025-04-02 14:57:39,939 -  * Debugger PIN: 187-881-593
+2025-04-02 14:57:46,810 - 127.0.0.1 - - [02/Apr/2025 14:57:46] "GET / HTTP/1.1" 200 -
+2025-04-02 14:57:48,471 - 127.0.0.1 - - [02/Apr/2025 14:57:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-02 14:58:38,140 - Sensor Readings: [59.0, 59.0, 50.0]
+2025-04-02 14:58:38,140 - ALARM TRIGGERED!
+2025-04-02 14:58:38,148 - 127.0.0.1 - - [02/Apr/2025 14:58:38] "POST /submit HTTP/1.1" 200 -
+2025-04-02 14:58:57,952 - Sensor Readings: [59.0, 59.0, 50.0]
+2025-04-02 14:58:57,952 - ALARM TRIGGERED!
+2025-04-02 14:58:57,952 - 127.0.0.1 - - [02/Apr/2025 14:58:57] "POST /submit HTTP/1.1" 200 -
+2025-04-02 14:59:13,961 - Sensor Readings: [59.0, 44.0, 50.0]
+2025-04-02 14:59:13,961 - 127.0.0.1 - - [02/Apr/2025 14:59:13] "POST /submit HTTP/1.1" 200 -
+2025-04-02 14:59:32,582 - Sensor Readings: [59.0, 44.0, 43.0]
+2025-04-02 14:59:32,582 - 127.0.0.1 - - [02/Apr/2025 14:59:32] "POST /submit HTTP/1.1" 200 -
+2025-04-03 09:30:21,024 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-03 09:30:21,026 - [33mPress CTRL+C to quit[0m
+2025-04-03 09:30:21,043 -  * Restarting with stat
+2025-04-03 09:30:21,961 -  * Debugger is active!
+2025-04-03 09:30:21,982 -  * Debugger PIN: 187-881-593
+2025-04-03 09:30:23,242 - 127.0.0.1 - - [03/Apr/2025 09:30:23] "GET / HTTP/1.1" 200 -
+2025-04-03 09:30:44,900 - Sensor Readings: [82.0, 24.0, 93.0]
+2025-04-03 09:30:44,900 - ALARM TRIGGERED!
+2025-04-03 09:30:44,901 - Significant deviation detected among sensor readings!
+2025-04-03 09:30:44,901 - 127.0.0.1 - - [03/Apr/2025 09:30:44] "POST /submit HTTP/1.1" 200 -
+2025-04-03 09:30:55,451 - Sensor Readings: [138.0, 101.0, 122.0]
+2025-04-03 09:30:55,451 - ALARM TRIGGERED!
+2025-04-03 09:30:55,452 - 127.0.0.1 - - [03/Apr/2025 09:30:55] "POST /submit HTTP/1.1" 200 -
+2025-04-03 09:31:53,043 - Sensor Readings: [24.0, 26.0, 122.0]
+2025-04-03 09:31:53,043 - Significant deviation detected among sensor readings!
+2025-04-03 09:31:53,044 - 127.0.0.1 - - [03/Apr/2025 09:31:53] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:25:49,163 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-22 16:25:49,164 - [33mPress CTRL+C to quit[0m
+2026-03-22 16:25:49,176 -  * Restarting with stat
+2026-03-22 16:25:51,237 -  * Debugger is active!
+2026-03-22 16:25:51,273 -  * Debugger PIN: 843-555-246
+2026-03-22 16:28:50,180 -  * Detected change in 'C:\\Users\\USER\\Desktop\\Total\\Projects\\Pressure Monitoring Voting System\\templates\\Pressure Monitoring Voting System\\logic.py', reloading
+2026-03-22 16:28:50,308 -  * Restarting with stat
+2026-03-22 16:28:51,438 -  * Debugger is active!
+2026-03-22 16:28:51,455 -  * Debugger PIN: 843-555-246
+2026-03-22 16:29:04,207 -  * Detected change in 'C:\\Users\\USER\\Desktop\\Total\\Projects\\Pressure Monitoring Voting System\\templates\\Pressure Monitoring Voting System\\advApp.py', reloading
+2026-03-22 16:29:04,281 -  * Restarting with stat
+2026-03-22 16:31:26,635 - 127.0.0.1 - - [22/Mar/2026 16:31:26] "GET / HTTP/1.1" 200 -
+2026-03-22 16:31:29,232 - 127.0.0.1 - - [22/Mar/2026 16:31:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-22 16:31:53,621 - Sensor Readings: [50.0, 50.0, 50.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:31:53,622 - 127.0.0.1 - - [22/Mar/2026 16:31:53] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:32:03,732 - Sensor Readings: [141.0, 176.0, 18.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:32:03,732 - ALARM TRIGGERED!
+2026-03-22 16:32:03,732 - Significant deviation detected among sensor readings!
+2026-03-22 16:32:03,733 - 127.0.0.1 - - [22/Mar/2026 16:32:03] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:32:13,483 - Sensor Readings: [180.0, 85.0, 18.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:32:13,483 - ALARM TRIGGERED!
+2026-03-22 16:32:13,483 - Significant deviation detected among sensor readings!
+2026-03-22 16:32:13,484 - 127.0.0.1 - - [22/Mar/2026 16:32:13] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:32:19,311 - 127.0.0.1 - - [22/Mar/2026 16:32:19] "GET /health HTTP/1.1" 200 -
+2026-03-22 16:40:10,495 - 127.0.0.1 - - [22/Mar/2026 16:40:10] "GET / HTTP/1.1" 200 -
+2026-03-22 16:40:15,622 - 127.0.0.1 - - [22/Mar/2026 16:40:15] "GET / HTTP/1.1" 200 -
+2026-03-22 16:40:51,997 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 16:40:51,998 - [33mPress CTRL+C to quit[0m
+2026-03-22 16:41:32,174 - 127.0.0.1 - - [22/Mar/2026 16:41:32] "GET / HTTP/1.1" 200 -
+2026-03-22 16:41:59,721 - Sensor Readings: [138.0, 50.0, 112.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:41:59,722 - ALARM TRIGGERED!
+2026-03-22 16:41:59,723 - Significant deviation detected among sensor readings!
+2026-03-22 16:41:59,725 - 127.0.0.1 - - [22/Mar/2026 16:41:59] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:46:10,993 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 16:46:11,005 - [33mPress CTRL+C to quit[0m
+2026-03-22 16:46:22,228 - 127.0.0.1 - - [22/Mar/2026 16:46:22] "GET / HTTP/1.1" 200 -
+2026-03-22 16:47:09,103 - 127.0.0.1 - - [22/Mar/2026 16:47:09] "GET / HTTP/1.1" 200 -
+2026-03-22 16:52:37,576 - 127.0.0.1 - - [22/Mar/2026 16:52:37] "GET / HTTP/1.1" 200 -
+2026-03-22 16:52:37,662 - 127.0.0.1 - - [22/Mar/2026 16:52:37] "GET / HTTP/1.1" 200 -
+2026-03-22 16:52:39,560 - 127.0.0.1 - - [22/Mar/2026 16:52:39] "GET / HTTP/1.1" 200 -
+2026-03-22 16:54:51,738 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 16:54:51,739 - [33mPress CTRL+C to quit[0m
+2026-03-22 16:54:58,307 - 127.0.0.1 - - [22/Mar/2026 16:54:58] "GET / HTTP/1.1" 200 -
+2026-03-22 16:55:05,486 - Sensor Readings: [50.0, 50.0, 50.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:05,487 - 127.0.0.1 - - [22/Mar/2026 16:55:05] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:55:13,834 - Sensor Readings: [17.5, 126.0, 115.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:13,834 - ALARM TRIGGERED!
+2026-03-22 16:55:13,834 - Significant deviation detected among sensor readings!
+2026-03-22 16:55:13,835 - 127.0.0.1 - - [22/Mar/2026 16:55:13] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:55:27,703 - Sensor Readings: [164.5, 36.0, 200.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:27,703 - ALARM TRIGGERED!
+2026-03-22 16:55:27,704 - Significant deviation detected among sensor readings!
+2026-03-22 16:55:27,705 - 127.0.0.1 - - [22/Mar/2026 16:55:27] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:55:35,017 - Sensor Readings: [172.5, 79.0, 69.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:35,018 - ALARM TRIGGERED!
+2026-03-22 16:55:35,019 - Significant deviation detected among sensor readings!
+2026-03-22 16:55:35,020 - 127.0.0.1 - - [22/Mar/2026 16:55:35] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:55:38,968 - Sensor Readings: [172.5, 6.0, 69.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:38,969 - ALARM TRIGGERED!
+2026-03-22 16:55:38,969 - Significant deviation detected among sensor readings!
+2026-03-22 16:55:38,970 - 127.0.0.1 - - [22/Mar/2026 16:55:38] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:55:43,412 - Sensor Readings: [172.5, 6.0, 170.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:43,413 - ALARM TRIGGERED!
+2026-03-22 16:55:43,414 - Significant deviation detected among sensor readings!
+2026-03-22 16:55:43,414 - 127.0.0.1 - - [22/Mar/2026 16:55:43] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:55:48,850 - Sensor Readings: [172.5, 129.5, 170.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:55:48,850 - ALARM TRIGGERED!
+2026-03-22 16:55:48,850 - Significant deviation detected among sensor readings!
+2026-03-22 16:55:48,851 - 127.0.0.1 - - [22/Mar/2026 16:55:48] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:56:01,606 - Sensor Readings: [62.5, 61.0, 62.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:56:01,606 - ALARM TRIGGERED!
+2026-03-22 16:56:01,607 - 127.0.0.1 - - [22/Mar/2026 16:56:01] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:56:09,491 - Sensor Readings: [19.5, 22.5, 24.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:56:09,492 - Significant deviation detected among sensor readings!
+2026-03-22 16:56:09,492 - 127.0.0.1 - - [22/Mar/2026 16:56:09] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:56:23,963 - Sensor Readings: [47.0, 56.0, 48.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 16:56:23,964 - Significant deviation detected among sensor readings!
+2026-03-22 16:56:23,964 - 127.0.0.1 - - [22/Mar/2026 16:56:23] "POST /submit HTTP/1.1" 200 -
+2026-03-22 16:59:36,746 - 127.0.0.1 - - [22/Mar/2026 16:59:36] "GET / HTTP/1.1" 200 -
+2026-03-22 16:59:50,189 - 127.0.0.1 - - [22/Mar/2026 16:59:50] "GET / HTTP/1.1" 200 -
+2026-03-22 16:59:51,669 - 127.0.0.1 - - [22/Mar/2026 16:59:51] "GET / HTTP/1.1" 200 -
+2026-03-22 17:00:07,943 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 17:00:07,944 - [33mPress CTRL+C to quit[0m
+2026-03-22 17:00:12,305 - 127.0.0.1 - - [22/Mar/2026 17:00:12] "GET / HTTP/1.1" 200 -
+2026-03-22 17:00:23,581 - Sensor Readings: [117.0, 87.0, 106.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:23,583 - ALARM TRIGGERED!
+2026-03-22 17:00:23,583 - Significant deviation detected among sensor readings!
+2026-03-22 17:00:23,583 - 127.0.0.1 - - [22/Mar/2026 17:00:23] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:00:29,786 - Sensor Readings: [55.0, 23.5, 34.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:29,786 - Significant deviation detected among sensor readings!
+2026-03-22 17:00:29,787 - 127.0.0.1 - - [22/Mar/2026 17:00:29] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:00:31,658 - Sensor Readings: [50.0, 50.0, 50.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:31,658 - 127.0.0.1 - - [22/Mar/2026 17:00:31] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:00:35,075 - Sensor Readings: [50.0, 106.5, 50.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:35,075 - Significant deviation detected among sensor readings!
+2026-03-22 17:00:35,076 - 127.0.0.1 - - [22/Mar/2026 17:00:35] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:00:39,957 - Sensor Readings: [25.0, 106.5, 121.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:39,957 - ALARM TRIGGERED!
+2026-03-22 17:00:39,957 - Significant deviation detected among sensor readings!
+2026-03-22 17:00:39,958 - 127.0.0.1 - - [22/Mar/2026 17:00:39] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:00:43,967 - Sensor Readings: [25.0, 36.5, 121.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:43,968 - Significant deviation detected among sensor readings!
+2026-03-22 17:00:43,969 - 127.0.0.1 - - [22/Mar/2026 17:00:43] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:00:48,560 - Sensor Readings: [25.0, 200.0, 93.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:00:48,560 - ALARM TRIGGERED!
+2026-03-22 17:00:48,560 - Significant deviation detected among sensor readings!
+2026-03-22 17:00:48,561 - 127.0.0.1 - - [22/Mar/2026 17:00:48] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:01:10,305 - 127.0.0.1 - - [22/Mar/2026 17:01:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-03-22 17:08:54,597 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 17:08:54,598 - [33mPress CTRL+C to quit[0m
+2026-03-22 17:09:06,232 - 127.0.0.1 - - [22/Mar/2026 17:09:06] "GET / HTTP/1.1" 200 -
+2026-03-22 17:09:11,345 - Sensor Readings: [53.0, 54.5, 45.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:11,345 - ALARM TRIGGERED!
+2026-03-22 17:09:11,346 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:11,347 - 127.0.0.1 - - [22/Mar/2026 17:09:11] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:12,348 - Sensor Readings: [50.0, 58.0, 47.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:12,349 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:12,349 - 127.0.0.1 - - [22/Mar/2026 17:09:12] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:13,346 - Sensor Readings: [52.5, 62.0, 53.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:13,347 - ALARM TRIGGERED!
+2026-03-22 17:09:13,347 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:13,348 - 127.0.0.1 - - [22/Mar/2026 17:09:13] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:14,342 - Sensor Readings: [55.5, 89.0, 53.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:14,342 - ALARM TRIGGERED!
+2026-03-22 17:09:14,343 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:14,343 - 127.0.0.1 - - [22/Mar/2026 17:09:14] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:15,341 - Sensor Readings: [54.5, 95.0, 51.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:15,342 - ALARM TRIGGERED!
+2026-03-22 17:09:15,342 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:15,342 - 127.0.0.1 - - [22/Mar/2026 17:09:15] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:16,342 - Sensor Readings: [50.5, 92.5, 47.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:16,342 - ALARM TRIGGERED!
+2026-03-22 17:09:16,342 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:16,343 - 127.0.0.1 - - [22/Mar/2026 17:09:16] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:17,343 - Sensor Readings: [23.0, 95.0, 45.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:17,344 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:17,344 - 127.0.0.1 - - [22/Mar/2026 17:09:17] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:18,351 - Sensor Readings: [24.0, 95.5, 43.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:18,351 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:18,351 - 127.0.0.1 - - [22/Mar/2026 17:09:18] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:19,476 - Sensor Readings: [19.5, 92.5, 43.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:19,476 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:19,476 - 127.0.0.1 - - [22/Mar/2026 17:09:19] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:20,347 - Sensor Readings: [14.5, 90.0, 42.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:20,347 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:20,348 - 127.0.0.1 - - [22/Mar/2026 17:09:20] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:21,344 - Sensor Readings: [10.0, 88.0, 40.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:21,345 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:21,345 - 127.0.0.1 - - [22/Mar/2026 17:09:21] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:22,349 - Sensor Readings: [6.0, 88.5, 40.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:22,349 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:22,349 - 127.0.0.1 - - [22/Mar/2026 17:09:22] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:23,341 - Sensor Readings: [0.5, 83.5, 36.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:23,342 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:23,342 - 127.0.0.1 - - [22/Mar/2026 17:09:23] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:24,347 - Sensor Readings: [4.5, 79.5, 32.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:24,347 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:24,348 - 127.0.0.1 - - [22/Mar/2026 17:09:24] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:25,349 - Sensor Readings: [8.0, 77.5, 34.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:25,349 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:25,350 - 127.0.0.1 - - [22/Mar/2026 17:09:25] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:26,345 - Sensor Readings: [8.5, 72.5, 33.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:26,345 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:26,346 - 127.0.0.1 - - [22/Mar/2026 17:09:26] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:27,351 - Sensor Readings: [12.5, 75.5, 30.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:27,351 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:27,356 - 127.0.0.1 - - [22/Mar/2026 17:09:27] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:28,349 - Sensor Readings: [16.0, 69.5, 31.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:28,349 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:28,349 - 127.0.0.1 - - [22/Mar/2026 17:09:28] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:29,341 - Sensor Readings: [15.5, 74.0, 36.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:29,341 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:29,342 - 127.0.0.1 - - [22/Mar/2026 17:09:29] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:30,348 - Sensor Readings: [10.5, 74.5, 33.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:30,348 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:30,349 - 127.0.0.1 - - [22/Mar/2026 17:09:30] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:31,346 - Sensor Readings: [10.5, 80.5, 37.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:31,346 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:31,347 - 127.0.0.1 - - [22/Mar/2026 17:09:31] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:32,334 - Sensor Readings: [15.5, 58.0, 38.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:32,334 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:32,339 - 127.0.0.1 - - [22/Mar/2026 17:09:32] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:33,518 - Sensor Readings: [16.0, 59.0, 42.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:33,518 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:33,519 - 127.0.0.1 - - [22/Mar/2026 17:09:33] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:34,346 - Sensor Readings: [0.0, 53.5, 43.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:34,346 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:34,346 - 127.0.0.1 - - [22/Mar/2026 17:09:34] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:35,339 - Sensor Readings: [29.5, 51.5, 47.5], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:35,339 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:35,339 - 127.0.0.1 - - [22/Mar/2026 17:09:35] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:36,349 - Sensor Readings: [28.0, 50.5, 52.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:36,349 - ALARM TRIGGERED!
+2026-03-22 17:09:36,349 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:36,350 - 127.0.0.1 - - [22/Mar/2026 17:09:36] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:37,361 - Sensor Readings: [31.5, 50.5, 55.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:37,361 - ALARM TRIGGERED!
+2026-03-22 17:09:37,361 - Significant deviation detected among sensor readings!
+2026-03-22 17:09:37,362 - 127.0.0.1 - - [22/Mar/2026 17:09:37] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:09:58,643 - Sensor Readings: [50.0, 50.0, 50.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:09:58,644 - 127.0.0.1 - - [22/Mar/2026 17:09:58] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:14:30,063 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 17:14:30,063 - [33mPress CTRL+C to quit[0m
+2026-03-22 17:14:33,539 - 127.0.0.1 - - [22/Mar/2026 17:14:33] "GET / HTTP/1.1" 200 -
+2026-03-22 17:42:33,044 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 17:42:33,048 - [33mPress CTRL+C to quit[0m
+2026-03-22 17:42:39,318 - 127.0.0.1 - - [22/Mar/2026 17:42:39] "GET / HTTP/1.1" 200 -
+2026-03-22 17:42:40,039 - 127.0.0.1 - - [22/Mar/2026 17:42:40] "GET /assets/character%20face.jpeg HTTP/1.1" 200 -
+2026-03-22 17:49:40,915 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 17:49:40,916 - [33mPress CTRL+C to quit[0m
+2026-03-22 17:50:01,769 - 127.0.0.1 - - [22/Mar/2026 17:50:01] "GET / HTTP/1.1" 200 -
+2026-03-22 17:50:02,014 - 127.0.0.1 - - [22/Mar/2026 17:50:02] "GET /assets/character%20face.jpeg HTTP/1.1" 200 -
+2026-03-22 17:56:11,311 - 127.0.0.1 - - [22/Mar/2026 17:56:11] "GET / HTTP/1.1" 200 -
+2026-03-22 17:56:11,629 - 127.0.0.1 - - [22/Mar/2026 17:56:11] "[36mGET /assets/character%20face.jpeg HTTP/1.1[0m" 304 -
+2026-03-22 17:56:24,633 - 127.0.0.1 - - [22/Mar/2026 17:56:24] "GET / HTTP/1.1" 200 -
+2026-03-22 17:56:24,702 - 127.0.0.1 - - [22/Mar/2026 17:56:24] "GET /assets/character%20face.jpeg HTTP/1.1" 200 -
+2026-03-22 17:56:32,484 - Sensor Readings: [50.0, 50.0, 50.0], threshold=50.0, deviation_percentage=10.0
+2026-03-22 17:56:32,485 - 127.0.0.1 - - [22/Mar/2026 17:56:32] "POST /submit HTTP/1.1" 200 -
+2026-03-22 17:56:52,466 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.18.153.92:5000
+2026-03-22 17:56:52,468 - [33mPress CTRL+C to quit[0m
+2026-03-22 17:56:57,129 - 127.0.0.1 - - [22/Mar/2026 17:56:57] "GET / HTTP/1.1" 200 -
+2026-03-22 17:56:57,303 - 127.0.0.1 - - [22/Mar/2026 17:56:57] "[36mGET /assets/character%20face.jpeg HTTP/1.1[0m" 304 -
